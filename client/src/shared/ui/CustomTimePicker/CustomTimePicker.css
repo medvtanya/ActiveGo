@@ -1,0 +1,224 @@
+.custom-time-picker {
+  position: relative;
+  width: 100%;
+}
+
+.time-input {
+  position: relative;
+  cursor: pointer;
+}
+
+.time-input input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  background-color: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.time-input input:focus {
+  background-color: hsl(240deg 15% 12%);
+  border-color: hsl(81deg 70% 65%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 65% / 20%);
+}
+
+.clock-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.time-input:hover .clock-icon {
+  stroke: hsl(81deg 70% 75%);
+}
+
+.time-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  min-width: 300px;
+  max-height: 400px;
+  padding: 1rem;
+  background: hsl(240deg 15% 8%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+}
+
+.time-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(240deg 10% 25%);
+}
+
+.time-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.now-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: hsl(240deg 15% 8%);
+  cursor: pointer;
+  background: hsl(81deg 70% 65%);
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.now-button:hover {
+  background: hsl(81deg 70% 75%);
+}
+
+.time-body {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.time-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.column-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(81deg 70% 65%);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 200px;
+  padding: 0.5rem;
+  overflow-y: auto;
+  background: hsl(240deg 15% 12%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+}
+
+.time-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.time-option:hover:not(.disabled) {
+  background: hsl(81deg 70% 65% / 20%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.time-option.selected {
+  font-weight: 600;
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+}
+
+.time-option.disabled {
+  color: hsl(240deg 5% 35%);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.time-separator {
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(81deg 70% 65%);
+}
+
+.time-footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(240deg 10% 25%);
+}
+
+.clear-button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: hsl(240deg 5% 65%);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.clear-button:hover {
+  color: var(--text);
+  background: hsl(240deg 10% 20%);
+}
+
+.time-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.time-list::-webkit-scrollbar-track {
+  background: hsl(240deg 10% 20%);
+  border-radius: 3px;
+}
+
+.time-list::-webkit-scrollbar-thumb {
+  background: hsl(81deg 70% 65%);
+  border-radius: 3px;
+}
+
+.time-list::-webkit-scrollbar-thumb:hover {
+  background: hsl(81deg 70% 75%);
+}
+
+@media (width <= 768px) {
+  .time-popup {
+    min-width: 280px;
+    padding: 0.75rem;
+  }
+
+  .time-body {
+    gap: 0.5rem;
+  }
+
+  .time-list {
+    max-height: 150px;
+  }
+
+  .time-option {
+    height: 28px;
+    font-size: 0.85rem;
+  }
+}

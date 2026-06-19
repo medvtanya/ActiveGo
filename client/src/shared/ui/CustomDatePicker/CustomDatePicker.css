@@ -1,0 +1,228 @@
+.custom-date-picker {
+  position: relative;
+  width: 100%;
+}
+
+.date-input {
+  position: relative;
+  cursor: pointer;
+}
+
+.date-input input {
+  width: 100%;
+  padding-right: 3rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  background-color: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.date-input input:focus {
+  background-color: hsl(240deg 15% 12%);
+  border-color: hsl(81deg 70% 65%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 65% / 20%);
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.date-input:hover .calendar-icon {
+  stroke: hsl(81deg 70% 75%);
+}
+
+.calendar-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  padding: 1rem;
+  background: hsl(240deg 15% 8%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(240deg 10% 25%);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: hsl(81deg 70% 65%);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.month-year {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.year {
+  font-size: 0.9rem;
+  color: hsl(81deg 70% 65%);
+}
+
+.calendar-body {
+  margin-bottom: 1rem;
+}
+
+.days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.day-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(81deg 70% 65%);
+  text-transform: uppercase;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.day-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.day-button:hover:not(.disabled) {
+  background: hsl(81deg 70% 65% / 20%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.day-button.selected {
+  font-weight: 600;
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+}
+
+.day-button.today {
+  font-weight: 600;
+  border-color: hsl(81deg 70% 65%);
+}
+
+.day-button.other-month {
+  color: hsl(240deg 5% 45%);
+}
+
+.day-button.disabled {
+  color: hsl(240deg 5% 35%);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.calendar-footer {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(240deg 10% 25%);
+}
+
+.today-button,
+.clear-button {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.today-button {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+}
+
+.today-button:hover {
+  background: hsl(81deg 70% 75%);
+}
+
+.clear-button {
+  color: hsl(240deg 5% 65%);
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+}
+
+.clear-button:hover {
+  color: var(--text);
+  background: hsl(240deg 10% 20%);
+}
+
+@media (width <= 768px) {
+  .calendar-popup {
+    min-width: 260px;
+    padding: 0.75rem;
+  }
+
+  .day-button {
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .nav-button {
+    width: 28px;
+    height: 28px;
+  }
+}

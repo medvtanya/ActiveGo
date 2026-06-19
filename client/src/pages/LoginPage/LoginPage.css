@@ -1,0 +1,210 @@
+.dark-login-container {
+  --primary: hsl(81deg 70% 55%);
+  --primary-light: hsl(81deg 70% 65%);
+  --dark: hsl(240deg 12% 10%);
+  --darker: hsl(240deg 15% 8%);
+  --surface: hsl(240deg 10% 16%);
+  --text: hsl(0deg 0% 95%);
+  --text-muted: hsl(240deg 5% 65%);
+  --border: hsl(240deg 10% 25%);
+  --error: hsl(0deg 70% 55%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.dark-login-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.dark-login-title {
+  position: relative;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.dark-login-title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  content: '';
+  background: var(--primary);
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.dark-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.dark-login-input {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  padding: 1rem;
+  margin: 0 auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.dark-login-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(81deg 70% 65% / 30%);
+}
+
+
+.dark-login-input.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px hsl(0deg 70% 55% / 30%);
+}
+
+.dark-login-input.error:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px hsl(0deg 70% 55% / 30%);
+}
+
+
+.field-error {
+  max-width: 700px;
+  margin-top: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--error);
+  text-align: left;
+}
+
+.dark-error-message {
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--error);
+  text-align: center;
+  background: hsl(0deg 70% 50% / 10%);
+  border-radius: 8px;
+}
+
+.dark-login-button {
+  position: relative;
+  width: 100%;
+  padding: 1.1rem;
+  margin-top: 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--darker);
+  cursor: pointer;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-login-button:hover {
+  box-shadow: 0 8px 20px hsl(81deg 70% 55% / 30%);
+  transform: translateY(-3px);
+}
+
+.dark-login-button:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  background: hsl(81deg 70% 55% / 30%);
+  box-shadow: none !important;
+  opacity: 0.5;
+  transform: none !important;
+}
+
+.dark-forgot-password {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.dark-forgot-password a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dark-forgot-password a:hover {
+  color: var(--primary);
+}
+
+.dark-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.dark-divider::before,
+.dark-divider::after {
+  flex: 1;
+  height: 1px;
+  margin: 0 10px;
+  content: '';
+  background: var(--border);
+}
+
+.dark-telegram-button {
+  width: 100%;
+  padding: 1.1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: hsl(200deg 100% 45%);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-telegram-button:hover {
+  background: hsl(200deg 100% 50%);
+  box-shadow: 0 8px 20px hsl(200deg 100% 45% / 30%);
+  transform: translateY(-3px);
+}
+
+.dark-telegram-button:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  background: hsl(200deg 100% 45% / 30%);
+  box-shadow: none !important;
+  opacity: 0.5;
+  transform: none !important;
+}
+
+@media (width <= 768px) {
+  .dark-login-card {
+    padding: 1.8rem;
+  }
+
+  .dark-login-title {
+    font-size: 1.8rem;
+  }
+
+  .dark-login-input,
+  .dark-login-button,
+  .dark-telegram-button {
+    padding: 0.9rem;
+  }
+}

@@ -1,0 +1,325 @@
+.event-form-container {
+  max-width: 800px;
+  padding: 2rem;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.event-form-container h2 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-section label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(81deg 70% 65%);
+}
+
+.form-section input[type="file"] {
+  display: none;
+}
+
+.form-section .photo-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  background: hsl(240deg 15% 12%);
+  border: 2px dashed hsl(240deg 10% 35%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-section .photo-upload:hover {
+  border-color: hsl(81deg 70% 65%);
+}
+
+.form-section .photo-upload.active {
+  background-color: hsl(240deg 10% 20%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.form-section .photo-upload-text {
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.preview-item {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+}
+
+.form-section select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  appearance: none;
+  background-color: hsl(240deg 15% 12%);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='hsl(81deg 70% 65%)'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-section select:focus {
+  border-color: hsl(81deg 70% 65%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 65% / 20%);
+}
+
+.form-section select option {
+  padding: 0.5rem;
+  background: hsl(240deg 15% 12%);
+}
+
+.sport-selector,
+.city-selector {
+  position: relative;
+}
+
+.sport-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background-color: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sport-input:focus {
+  border-color: hsl(81deg 70% 65%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 65% / 20%);
+}
+
+.city-selector .dropdown-arrow,
+.sport-selector .dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.city-selector:focus-within .dropdown-arrow,
+.sport-selector:focus-within .dropdown-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  max-height: 200px;
+  margin-top: 0.25rem;
+  overflow-y: auto;
+  background: hsl(240deg 15% 12%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: hsl(240deg 10% 20%);
+}
+
+.dropdown-item.selected {
+  background-color: hsl(81deg 70% 65% / 20%);
+}
+
+.dropdown-add-item {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: hsl(81deg 70% 65%);
+  cursor: pointer;
+}
+
+.dropdown-no-results {
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+}
+
+.add-city-btn {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  color: hsl(240deg 15% 8%);
+  cursor: pointer;
+  background: hsl(81deg 70% 65%);
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.add-city-btn:hover {
+  background: hsl(81deg 70% 55%);
+}
+
+.add-city-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background-color: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: hsl(81deg 70% 65%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 65% / 20%);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: hsl(240deg 15% 8%);
+  cursor: pointer;
+  background: hsl(81deg 70% 65%);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background: hsl(81deg 70% 55%);
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.cancel-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: hsl(0deg 70% 60%);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: hsl(0deg 70% 50%);
+}
+
+.cancel-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+.alert.success {
+  color: hsl(120deg 60% 75%);
+  background: hsl(120deg 60% 25% / 30%);
+}
+
+.alert.error {
+  color: hsl(0deg 70% 70%);
+  background-color: hsl(0deg 70% 50% / 10%);
+  border-color: hsl(0deg 70% 50%);
+}
+
+.club-type-buttons {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.type-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  background-color: hsl(240deg 15% 20%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.type-button:hover {
+  background-color: hsl(240deg 15% 25%);
+}
+
+.type-button.active {
+  color: var(--text);
+  background-color: hsl(240deg 15% 20%);
+  border: 2px solid hsl(81deg 70% 65%);
+}
+
+@media (width <= 768px) {
+  .event-form-container {
+    padding: 1rem;
+  }
+}

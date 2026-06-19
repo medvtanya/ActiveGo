@@ -1,0 +1,235 @@
+.modal-overlays {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 70%);
+  backdrop-filter: blur(5px);
+}
+
+.modal-contents {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 350px;
+  max-height: 80vh;
+  overflow: hidden;
+  background-color: hsl(240deg 12% 10%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+}
+
+.modal-contents h2 {
+  padding: 1.5rem 1.5rem 1rem;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(0deg 0% 95%);
+}
+
+.modal-forms {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-scrollables {
+  flex: 1;
+  max-height: calc(80vh - 120px);
+  padding: 0 1.5rem;
+  overflow-y: auto;
+}
+
+.modal-scrollables::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scrollables::-webkit-scrollbar-track {
+  background: hsl(240deg 10% 20%);
+  border-radius: 3px;
+}
+
+.modal-scrollables::-webkit-scrollbar-thumb {
+  background: hsl(81deg 70% 55%);
+  border-radius: 3px;
+}
+
+.form-groups {
+  margin-bottom: 1.2rem;
+}
+
+.form-groups label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(81deg 70% 55%);
+}
+
+.form-groups input,
+.form-groups textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: hsl(0deg 0% 95%);
+  background-color: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+}
+
+.form-groups textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-groups input:focus,
+.form-groups textarea:focus {
+  border-color: hsl(81deg 70% 55%);
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(81deg 70% 55% / 20%);
+}
+
+.levels-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.levels-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: hsl(0deg 0% 80%);
+  cursor: pointer;
+  background: hsl(240deg 15% 20%);
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.levels-button:hover {
+  background: hsl(240deg 15% 25%);
+}
+
+.levels-button.active {
+  font-weight: 500;
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 55%);
+}
+
+.modals-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid hsl(240deg 10% 25%);
+}
+
+/* Специфичные стили для календаря в EditEventModal */
+.modal-contents .custom-date-picker {
+  position: relative;
+}
+
+.modal-contents .custom-date-picker .calendar-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-contents .custom-date-picker .calendar-header {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  background: hsl(240deg 15% 8%);
+  border-bottom: 1px solid hsl(240deg 10% 25%);
+}
+
+.modal-contents .custom-date-picker .nav-button {
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: hsl(81deg 70% 65%);
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.modal-contents .custom-date-picker .nav-button:hover {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.modal-contents .custom-date-picker .calendar-body {
+  position: relative;
+  z-index: 1000;
+}
+
+.modal-contents .custom-date-picker .days-grid {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Стили для CustomTimePicker в EditEventModal */
+.modal-contents .custom-time-picker {
+  position: relative;
+}
+
+.modal-contents .custom-time-picker .time-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: auto;
+  z-index: 1000;
+  width: 200px;
+  max-width: calc(100vw - 2rem);
+  overflow: hidden;
+}
+
+.modal-contents .custom-time-picker .time-popup .time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  background: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+.modal-contents .custom-time-picker .time-button {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: hsl(0deg 0% 95%);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.modal-contents .custom-time-picker .time-button:hover {
+  background: hsl(81deg 70% 65% / 20%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.modal-contents .custom-time-picker .time-button.selected {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+  border-color: hsl(81deg 70% 65%);
+}

@@ -1,0 +1,50 @@
+{
+  "name": "sportapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "lint:css": "stylelint **/*.css --ignore-path .stylelintignore"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "@iminside/react-yandex-maps": "^1.2.7",
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.11.0",
+    "emoji-picker-react": "^4.13.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.8",
+    "react-imask": "^7.6.1",
+    "react-input-mask": "^2.0.4",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.6.3",
+    "react-router-dom": "^7.7.0",
+    "react-timeago": "^8.3.0",
+    "react-toastify": "^11.0.5",
+    "socket.io-client": "^4.8.1",
+    "yandex-maps": "^0.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard": "^36.0.1",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  }
+}

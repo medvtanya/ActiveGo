@@ -1,0 +1,260 @@
+.dark-profile-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dark-profile-sections-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (width <= 768px) {
+  .dark-profile-sections-row {
+    flex-direction: column;
+  }
+}
+
+.dark-profile-block {
+  flex: 1;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 20%);
+}
+
+.dark-profile-block-clickable {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-profile-block-clickable:hover {
+  box-shadow: 0 6px 24px rgb(0 0 0 / 30%);
+  transform: translateY(-3px);
+}
+
+.dark-profile-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dark-profile-block-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dark-profile-edit-button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.dark-profile-edit-button:hover {
+  color: var(--primary);
+}
+
+.dark-profile-edit-button img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.dark-profile-edit-button:hover img {
+  opacity: 1;
+}
+
+.dark-profile-sports-list,
+.dark-profile-groups,
+.dark-profile-events {
+  padding-right: 0.5rem;
+
+  .dark-profile-groups,
+  .dark-profile-events {
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
+  .dark-profile-sport-item {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--darker);
+    border-radius: 8px;
+  }
+
+  .dark-profile-empty,
+  .dark-profile-hint,
+  .dark-profile-loading {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  .dark-profile-hint {
+    margin-top: 0.5rem;
+  }
+
+  .dark-sport-edit-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(0 0 0 / 70%);
+  }
+
+  .dark-sport-edit-modal-content {
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    padding: 2rem;
+    overflow-y: auto;
+    background: var(--dark);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+  }
+
+  .dark-sport-edit-modal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .dark-sport-edit-modal-header h3 {
+    flex: 1;
+    margin: 0;
+    color: var(--text);
+    text-align: center;
+  }
+
+ 
+  .dark-sport-edit-modal-header h3.text-center {
+    flex: 1;
+    text-align: center;
+  }
+
+  .dark-sport-edit-section h5.text-center {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .dark-sport-tags-container.text-center {
+    justify-content: center;
+  }
+
+  .dark-sport-buttons-container.text-center {
+    justify-content: center;
+  }
+
+  .dark-sport-edit-modal-close {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s ease;
+  }
+
+  .dark-sport-edit-modal-close:hover {
+    color: var(--error);
+  }
+
+  .dark-sport-edit-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .dark-sport-edit-section h4 {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .dark-sport-edit-section h5 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .dark-sport-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .dark-sport-tag {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--surface);
+    border-radius: 20px;
+  }
+
+  .dark-sport-tag-remove {
+    padding: 0 0.2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .dark-sport-tag-remove:hover {
+    color: var(--error);
+  }
+
+  .dark-sport-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .dark-sport-add-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    cursor: pointer;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .dark-sport-add-button:hover:not(.disabled) {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .dark-sport-add-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .dark-profile-empty.text-center,
+  .dark-profile-loading.text-center {
+    text-align: center;
+  }
+}

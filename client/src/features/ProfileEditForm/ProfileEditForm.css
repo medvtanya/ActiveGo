@@ -1,0 +1,611 @@
+.profile-edit-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 40px;
+  color: var(--text);
+}
+
+.profile-header-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.profile-header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.change-background-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: white;
+  cursor: pointer;
+  background: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.change-background-btn:hover {
+  background: rgb(0 0 0 / 70%);
+  border-color: rgb(255 255 255 / 20%);
+}
+
+.change-background-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.profile-edit-content-wrapper {
+  position: relative;
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.profile-edit-content {
+  position: relative;
+  z-index: 3;
+  padding: 24px;
+  margin-top: -80px;
+  background: hsl(240deg 15% 8%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+
+.avatar-upload-section {
+  display: flex;
+  justify-content: center;
+  margin-top: -120px;
+  margin-bottom: 20px;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background: hsl(240deg 15% 12%);
+  border: 4px solid hsl(240deg 15% 8%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 30%);
+}
+
+.change-avatar-btn {
+  padding: 6px 12px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.profile-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section {
+  margin-bottom: 16px;
+}
+
+.section-label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(81deg 70% 65%);
+}
+
+.city-selector {
+  position: relative;
+}
+
+.city-input,
+.phone-input,
+.password-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgb(15 15 20 / 60%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.date-input {
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgb(15 15 20 / 60%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.city-input:focus,
+.phone-input:focus,
+.password-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(157 96 255 / 20%);
+}
+
+.date-input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(157 96 255 / 20%);
+}
+
+.bio-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  resize: vertical;
+  background: rgb(15 15 20 / 60%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.bio-textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(157 96 255 / 20%);
+}
+
+.city-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  max-height: 200px;
+  padding: 0;
+  margin-top: 0.25rem;
+  overflow-y: auto;
+  list-style: none;
+  background: hsl(240deg 15% 12%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: hsl(240deg 10% 20%);
+}
+
+.dropdown-loading,
+.dropdown-no-results {
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+}
+
+.password-section {
+  padding: 16px;
+  background: hsl(240deg 15% 12%);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 8px;
+}
+
+.password-message {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.password-message.success {
+  color: hsl(120deg 60% 75%);
+}
+
+.password-message.error {
+  color: hsl(0deg 60% 75%);
+}
+
+.character-count {
+  margin: -8px 0 8px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.character-count.error {
+  color: hsl(0deg 60% 75%);
+}
+
+.form-error {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #ff6b6b;
+}
+
+.password-input.error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 1px #ff6b6b;
+}
+
+.password-input.error:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 1px #ff6b6b;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.form-actions button.save-button-disabled {
+  cursor: not-allowed;
+  background-color: rgb(34 197 94 / 20%);
+  border: 1px solid rgb(34 197 94 / 30%);
+  opacity: 0.7;
+}
+
+.form-actions button.save-button-disabled:hover {
+  background-color: rgb(34 197 94 / 20%);
+  border-color: rgb(34 197 94 / 30%);
+}
+
+.form-actions button.save-button-active {
+  color: var(--text-dark);
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  box-shadow: var(--shadow-sm);
+}
+
+.form-actions button.save-button-active:hover {
+  background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
+  box-shadow: var(--shadow-md);
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .profile-header-wrapper {
+    height: 250px;
+  }
+
+  .profile-edit-content {
+    padding: 20px;
+    margin-top: -60px;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar-upload-section {
+    margin-top: -100px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .change-background-btn {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.profile-edit-form .custom-date-picker {
+  position: relative;
+  width: 100%;
+}
+
+.profile-edit-form .custom-date-picker .date-input {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-edit-form .custom-date-picker .date-input input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  background: rgb(15 15 20 / 60%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.profile-edit-form .custom-date-picker .date-input input:focus {
+  background-color: hsl(240deg 15% 12%);
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(157 96 255 / 20%);
+}
+
+.profile-edit-form .custom-date-picker .calendar-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.profile-edit-form .custom-date-picker .date-input:hover .calendar-icon {
+  stroke: hsl(81deg 70% 75%);
+}
+
+.profile-edit-form .custom-date-picker .calendar-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  padding: 1rem;
+  background: hsl(240deg 15% 8%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+}
+
+.profile-edit-form .custom-date-picker .calendar-header {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  background: hsl(240deg 15% 8%);
+  border-bottom: 1px solid hsl(240deg 10% 25%);
+}
+
+.profile-edit-form .custom-date-picker .nav-button {
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: hsl(81deg 70% 65%);
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.profile-edit-form .custom-date-picker .nav-button:hover {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .month-year {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.profile-edit-form .custom-date-picker .month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-edit-form .custom-date-picker .year {
+  font-size: 0.9rem;
+  color: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .calendar-body {
+  position: relative;
+  z-index: 1000;
+  margin-bottom: 1rem;
+}
+
+.profile-edit-form .custom-date-picker .days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-edit-form .custom-date-picker .day-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(81deg 70% 65%);
+  text-transform: uppercase;
+}
+
+.profile-edit-form .custom-date-picker .days-grid {
+  position: relative;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.profile-edit-form .custom-date-picker .day-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  font-size: 0.9rem;
+  color: var(--text);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.profile-edit-form .custom-date-picker .day-button:hover:not(.disabled) {
+  background: hsl(81deg 70% 65% / 20%);
+  border-color: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .day-button.selected {
+  font-weight: 600;
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .day-button.today {
+  font-weight: 600;
+  border-color: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .day-button.other-month {
+  color: hsl(240deg 5% 45%);
+}
+
+.profile-edit-form .custom-date-picker .day-button.disabled {
+  color: hsl(240deg 5% 35%);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.profile-edit-form .custom-date-picker .calendar-footer {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(240deg 10% 25%);
+}
+
+.profile-edit-form .custom-date-picker .today-button,
+.profile-edit-form .custom-date-picker .clear-button {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.profile-edit-form .custom-date-picker .today-button {
+  color: hsl(240deg 15% 8%);
+  background: hsl(81deg 70% 65%);
+}
+
+.profile-edit-form .custom-date-picker .today-button:hover {
+  background: hsl(81deg 70% 75%);
+}
+
+.profile-edit-form .custom-date-picker .clear-button {
+  color: hsl(240deg 5% 65%);
+  background: transparent;
+  border: 1px solid hsl(240deg 10% 25%);
+}
+
+.profile-edit-form .custom-date-picker .clear-button:hover {
+  color: var(--text);
+  background: hsl(240deg 10% 20%);
+}
+
+@media (width <= 768px) {
+  .profile-edit-form .custom-date-picker .calendar-popup {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    min-width: 260px;
+    padding: 0.75rem;
+  }
+
+  .profile-edit-form .custom-date-picker .day-button {
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .profile-edit-form .custom-date-picker .nav-button {
+    position: relative;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: hsl(81deg 70% 65%);
+    pointer-events: auto;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid hsl(240deg 10% 25%);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .profile-edit-form .custom-date-picker {
+    position: relative;
+  }
+
+  .profile-edit-form .custom-date-picker .calendar-header {
+    position: relative;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    background: hsl(240deg 15% 8%);
+    border-bottom: 1px solid hsl(240deg 10% 25%);
+  }
+
+  .profile-edit-form .custom-date-picker .nav-button:hover {
+    color: hsl(240deg 15% 8%);
+    background: hsl(81deg 70% 65%);
+    border-color: hsl(81deg 70% 65%);
+  }
+
+  .profile-edit-form .custom-date-picker .calendar-body {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .profile-edit-form .custom-date-picker .days-grid {
+    position: relative;
+    z-index: 1000;
+  }
+}

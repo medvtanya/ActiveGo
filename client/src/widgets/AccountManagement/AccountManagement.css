@@ -1,0 +1,45 @@
+.delete-account-btn {
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.delete-account-btn:hover {
+  color: white;
+  background-color: #d32f2f;
+}
+
+.delete-confirmation {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 12px;
+  margin-top: 8px;
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.delete-confirmation p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.confirmation-buttons button {
+  flex: 1;
+}
+
+@media (width <= 768px) {
+  .confirmation-buttons {
+    flex-direction: column;
+  }
+}

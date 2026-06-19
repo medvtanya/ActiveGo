@@ -1,0 +1,267 @@
+.desktop-not-supported {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(1px);
+}
+
+.desktop-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+  padding: 4rem;
+}
+
+.desktop-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem 4rem;
+  text-align: center;
+  background: hsl(240deg 15% 10% / 90%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 40px;
+  box-shadow: 0 30px 80px rgb(0 0 0 / 50%);
+}
+
+.desktop-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  border-radius: 50%;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 40%);
+  animation: float 3s ease-in-out infinite;
+}
+
+.desktop-icon svg {
+  width: 80px;
+  height: 80px;
+  color: var(--text-dark);
+}
+
+.desktop-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text);
+  text-shadow: 2px 2px 8px rgb(0 0 0 / 50%);
+}
+
+.desktop-title-app {
+  margin-bottom: 0.5rem;
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-shadow: none;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+  -webkit-text-fill-color: transparent;
+}
+
+.desktop-title-main {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.desktop-title-accent {
+  font-weight: 900;
+  text-shadow: none;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desktop-message {
+  max-width: 600px;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.desktop-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: hsl(240deg 15% 12% / 80%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(240deg 10% 25%);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-item:hover {
+  background: hsl(240deg 15% 15% / 90%);
+  box-shadow: 0 6px 25px rgb(0 0 0 / 30%);
+  transform: translateX(8px);
+}
+
+.feature-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  border-radius: 16px;
+}
+
+.feature-icon svg {
+  width: 32px;
+  height: 32px;
+  color: var(--text-dark);
+}
+
+.feature-item span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.desktop-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.cta-text {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.cta-button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background: none;
+  border: 2px solid;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-button svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cta-button.primary {
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  border-color: var(--secondary);
+  box-shadow: 0 4px 15px rgb(0 0 0 / 30%);
+}
+
+.cta-button.primary:hover {
+  background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
+  box-shadow: 0 6px 20px rgb(0 0 0 / 40%);
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  color: var(--text);
+  background: transparent;
+  border-color: hsl(240deg 10% 25%);
+}
+
+.cta-button.secondary:hover {
+  background: hsl(240deg 15% 15%);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+@media (width <= 768px) {
+  .desktop-not-supported {
+    display: none;
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px var(--secondary));
+  }
+
+  to {
+    filter: drop-shadow(0 0 20px var(--secondary))
+      drop-shadow(0 0 30px var(--secondary-light));
+  }
+}
+
+@media (width >= 769px) {
+  .desktop-not-supported {
+    display: flex;
+  }
+}

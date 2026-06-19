@@ -1,0 +1,7 @@
+[dotenv@17.2.0] injecting env (6) from .env (tip: ⚙️  write to custom object with { processEnv: myObject })
+
+Sequelize CLI [Node: 23.11.0, CLI: 6.6.3, ORM: 6.37.7]
+
+Loaded configuration file "src/db/config/database.json".
+Using environment "development".
+Database FinalProject dropped.
